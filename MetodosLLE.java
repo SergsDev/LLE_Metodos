@@ -85,16 +85,19 @@ public class MetodosLLE {
             return contador;
         }
         
-        public int cantidadImpares(){
-            int contador = 0;
+        public int sumaPrimos(){
             Nodo recorredor = new Nodo();
+            int suma  = 0;
             recorredor = primero;
-            while(recorredor!= null){
-                if(recorredor.info != 0){
-                    
+            while(recorredor != null){
+                if(recorredor.esPrimo()){
+                    suma += recorredor.info;
                 }
+                recorredor = recorredor.siguiente;
             }
+            return suma;
         }
+        
         private int Ultimo(){
             Nodo recorredor = new Nodo();
             recorredor = primero;
